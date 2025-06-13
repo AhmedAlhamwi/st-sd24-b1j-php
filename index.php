@@ -35,6 +35,13 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC); // Fetch all categories
         </div>
         <?php unset($_SESSION['message']); // Clear the message after displaying it ?>
     <?php endif; ?>
+    <?php if (isset($_SESSION['error'])): // Check if there is an error to display ?>
+        <div class="alert alert-danger">
+            <?= $_SESSION['error'] ?> <!-- Display the error -->
+        </div>
+        <?php unset($_SESSION['error']); // Clear the error after displaying it ?>
+    <?php endif; ?>
+    
 
     <h1>Categories</h1>
     <a href="insert.php">Category toevoegen</a> <!-- Link to add a new category -->
