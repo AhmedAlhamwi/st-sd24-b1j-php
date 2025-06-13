@@ -26,6 +26,15 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
     <title>Document</title>
 </head>
 <body>
+   <?php if (isset($_SESSION['message'])): ?>
+        <div class="alert alert-success">
+            <?= $_SESSION['message'] ?>
+        </div>
+        <?php unset($_SESSION['message']); ?>
+    <?php endif; 
+    ?>
+
+    <h1>Categories</h1>
 <a href="insert.php">Category toevoegen</a>
 <table>
     <thead>
