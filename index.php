@@ -41,6 +41,7 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
             <td><a href="products.php?id=<?= $category['id'] ?>">Producten</a></td>
             <?php if (isset($user) && $user['role'] === 'ROLE_ADMIN'): ?>
                 <td><a href="update.php?id=<?= $category['id'] ?>">update</a></td>
+                <td><a href="delete.php?id=<?= $category['id'] ?>">delete</a></td>
             <?php endif; ?>
         </tr>
     <?php endforeach; ?>
